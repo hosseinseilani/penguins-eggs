@@ -56,13 +56,13 @@ export default class Compressors {
   }
 
   /**
-   * max
+   * max compress with these options: "-b 1M -Xbcj x86 -no-recovery -always-use-fragments -no-duplicates"  
    * @returns
    */
   max(): string {
-    let comp = 'xz -b 256K -Xbcj x86'
+    let comp = ' xz -b 1M -Xbcj x86 -no-recovery -always-use-fragments -no-duplicates '
     if (process.arch === 'arm64') {
-      comp = 'xz -b 256K' // -Xbcj arm  NOT work 
+      comp = ' xz -b 1M x86 -no-recovery -always-use-fragments -no-duplicates' // -Xbcj arm  NOT work 
     }
     return comp
   }
