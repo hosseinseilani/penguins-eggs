@@ -93,6 +93,13 @@
     - lunar # Ubuntu lunar 23.04
     - mantic # Ubuntu lunar 23.10
 
+# noble derivated
+- id: noble
+  distroLike: Ubuntu
+  family: debian
+  ids:
+    - noble 
+
 #
 # ARCH
 #
