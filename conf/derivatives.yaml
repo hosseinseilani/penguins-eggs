@@ -30,6 +30,14 @@
     - Sparky # SparkyLinux 7
     - ara # Parrot ara
 
+# trixie  Debian 13
+- id: trixie
+  distroLike: Debian
+  family: debian
+  ids:
+    - trixie
+
+    
 #
 # DEVUAN
 #
