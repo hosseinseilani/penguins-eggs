@@ -26,6 +26,8 @@ apk add nano
 ```
 rm /etc/apk/repositories
 nano /etc/apk/repositories
+or
+vi /etc/apk/repositories
 
 ```
 
@@ -39,8 +41,11 @@ http://alpinelinux.mirror.garr.it/v3.20/community
 @testing https://dl-cdn.alpinelinux.org/alpine/edge/testing
 
 ```
+save and exit from vi: (shift + zz)
+save and exit from nano (:wq)
+```
 
-``` 
+then: 
 apk update
 apk add doas
 ln -s /usr/bin/doas /usr/bin/sudo
@@ -58,6 +63,9 @@ apk add \
     shadow  
 
 ```
+
+## or
+apk add bash-completion git mandoc nano rsync shadow  
 
 
 add your user to groups `wheel` and others... 
@@ -95,7 +103,12 @@ apk add \
 apk add \
     setxkbmap \
     xdg-user-dirs \
-    xrandr 
+    xrandr
+```
+
+## or at one line :
+```
+xfce4 xfce4-terminal xfce4-screensaver xfce4-whiskermenu-plugin lightdm-gtk-greeter setxkbmap xdg-user-dirs  xrandr
 
 rc-update add dbus
 rc-service dbus start
@@ -214,6 +227,8 @@ doas apk add \
     xorriso
 
 ```
+## or at one line:
+apk add  alpine-conf apk-tools cryptsetup curl dosfstools fuse git jq lsblk lsb-release lvm2 mkinitfs nodejs npm parted rsync syslinux squashfs-tools sshfs xorriso
 
 ```
 echo "fuse" | doas tee /etc/modules-load.d/fuse.conf
@@ -242,7 +257,7 @@ We want to work with all the conveniences of eggs installed, especially completi
 ## Create a link to ${HOME}/penguins-eggs/eggs
 It is tedious to always put ./eggs to start eggs from source, we can create a symbolic link to avoid the hassle:
 ```
-sudo ln -s ${HOME}/penguins-eggs/eggs /usr/bin/eggs`
+sudo ln -s ${HOME}/penguins-eggs/eggs /usr/bin/eggs
 ```
 
 ## Configure eggs
